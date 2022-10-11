@@ -1,6 +1,3 @@
-
-
-
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const questionContainerElement = document.getElementById("question-container");
@@ -10,7 +7,7 @@ const notaElement = document.querySelector(".nota");
 
 let currentQuestionIndex;
 let nota = 0;
-const questions = [
+const results = [
   {
     "category": "General Knowledge",
     "type": "boolean",
@@ -125,7 +122,51 @@ const questions = [
       "Theodore Roosevelt"
     ]
   }
-]
+];
+
+console.log(results);
+
+
+// empezamos a generar los datos para construir nuesro objeto
+let incorrect = [];
+incorrect = results.map(function (elem) {
+  let returnIncorrect = {incorrect_answers: elem.incorrect_answers};
+  return returnIncorrect;
+});
+console.log(incorrect);
+
+//aislamos correctas
+let corrects = [];
+corrects = results.map(function (elem) {
+  let returnCorrects = {correct_answer: elem.correct_answer};
+  return returnCorrects;
+});
+console.log(corrects);
+
+let questionGlobal = [];
+questionGlobal = results.map(function (elem) {
+  let returnQuestion = {question: elem.question};
+  return returnQuestion;
+});
+console.log(questionGlobal);
+
+const answers = [...incorrect,corrects]
+console.log(answers);
+
+// creadno el objeto desde los objetos de la api
+function crearObjetoDesdeArreglo(datos) {
+  let questions  = {};
+
+    for (const e of datos) {
+      questions[e[0]] = e[1];
+    }
+    return questions;
+}
+
+let propiedadesValores = [['question', questionGlobal],['answers', answers]];
+console.log(crearObjetoDesdeArreglo(propiedadesValores))
+
+// empieza el codigo de sofi
 
 function startGame() {
   startButton.classList.add("hide");
@@ -135,18 +176,14 @@ function startGame() {
 }
 
 function showQuestion(question) {
-  questionElement.innerText = question.question; 
-
-  const answers = [question.correct_answer,...question.incorrect_answers]
-  console.log(answers);
-    answers.forEach((answer) => {
+  questionElement.innerText = question.question;
+  question.answers.forEach((answer) => {
     const button = document.createElement("button");
-    button.innerText = answer;
-    if (answer.correct) {   /// tratar de identificar la respesta correcta
+    button.innerText = answer.text;
+
+    if (answer.correct) {
       button.dataset.correct = true;
     }
-
- 
     // cuando clique una respuesta llama a la función
 
     button.addEventListener("click", function () {
@@ -172,7 +209,6 @@ function showQuestion(question) {
 
 function setNextQuestion() {
   resetState();
-  
   showQuestion(questions[currentQuestionIndex]);
 }
 
