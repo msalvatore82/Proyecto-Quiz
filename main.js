@@ -137,10 +137,10 @@ for (let i = 0; i < results.length; i++) {
 
 
 
-// // empezamos a generar los datos para construir nuesro objeto
-let incorrect = [];
+// // empezamos a generar los datos para construir nuestro objeto
+let incorrect = ([]);
 incorrect = results.map(function (elem) {
-  let returnIncorrect = {incorrect_answers: `text: ${elem.incorrect_answers}, correct: ${"false"}`};
+  let returnIncorrect = {incorrect_answers: elem.incorrect_answers, correct: "false"};
   return returnIncorrect;
 });
 console.log(incorrect);
@@ -148,7 +148,7 @@ console.log(incorrect);
 //aislamos correctas
 let corrects = [];
 corrects = results.map(function (elem) {
-  let returnCorrects = {correct_answer: `text: ${elem.correct_answer}, correct: ${"true"}`};
+  let returnCorrects = {correct_answer: elem.correct_answer, correct: "true"};
   return returnCorrects;
 });
 console.log(corrects);
@@ -156,9 +156,20 @@ console.log(corrects);
 let questionGlobal = [];
 questionGlobal = results.map(function (elem) {
   let returnQuestion = {question: elem.question};
-  return returnQuestion;
+   return returnQuestion;
 });
 console.log(questionGlobal);
+
+//-----------------------------Hacer pruebas aquí---------------------------------
+
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------------
 
 
 const answers = {incorrect,corrects}
