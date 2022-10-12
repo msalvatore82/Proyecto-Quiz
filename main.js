@@ -7,7 +7,7 @@ const notaElement = document.querySelector(".nota");
 
 let currentQuestionIndex;
 let nota = 0;
-const results = [
+let results = [
   {
     "category": "General Knowledge",
     "type": "boolean",
@@ -124,13 +124,23 @@ const results = [
   }
 ];
 
-console.log(results);
+
+// Object.values(results).forEach((item) => console.log(item.correct_answer + item.incorrect_answers))
+
+for (let i = 0; i < results.length; i++) {
+  let questionCyI = results [i];
+  let question = [{}]
+
+  console.log([questionCyI.correct_answer] + [questionCyI.incorrect_answers]);
+}
 
 
-// empezamos a generar los datos para construir nuesro objeto
+
+
+// // empezamos a generar los datos para construir nuesro objeto
 let incorrect = [];
 incorrect = results.map(function (elem) {
-  let returnIncorrect = {incorrect_answers: elem.incorrect_answers};
+  let returnIncorrect = {incorrect_answers: `text: ${elem.incorrect_answers} correct: ${true}`};
   return returnIncorrect;
 });
 console.log(incorrect);
@@ -138,7 +148,7 @@ console.log(incorrect);
 //aislamos correctas
 let corrects = [];
 corrects = results.map(function (elem) {
-  let returnCorrects = {correct_answer: elem.correct_answer};
+  let returnCorrects = {correct_answer: `text: ${elem.correct_answer} correct: true`};
   return returnCorrects;
 });
 console.log(corrects);
@@ -150,7 +160,8 @@ questionGlobal = results.map(function (elem) {
 });
 console.log(questionGlobal);
 
-const answers = [...incorrect,corrects]
+
+const answers = {incorrect,corrects}
 console.log(answers);
 
 // creadno el objeto desde los objetos de la api
@@ -209,7 +220,7 @@ function showQuestion(question) {
 
 function setNextQuestion() {
   resetState();
-  showQuestion(questions[currentQuestionIndex]);
+  showQuestion(results[currentQuestionIndex]);
 }
 
 function setStatusClass(element, correct) {
