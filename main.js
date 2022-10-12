@@ -140,7 +140,7 @@ for (let i = 0; i < results.length; i++) {
 // // empezamos a generar los datos para construir nuesro objeto
 let incorrect = [];
 incorrect = results.map(function (elem) {
-  let returnIncorrect = {incorrect_answers: `text: ${elem.incorrect_answers} correct: ${true}`};
+  let returnIncorrect = {incorrect_answers: `text: ${elem.incorrect_answers}, correct: ${"false"}`};
   return returnIncorrect;
 });
 console.log(incorrect);
@@ -148,7 +148,7 @@ console.log(incorrect);
 //aislamos correctas
 let corrects = [];
 corrects = results.map(function (elem) {
-  let returnCorrects = {correct_answer: `text: ${elem.correct_answer} correct: true`};
+  let returnCorrects = {correct_answer: `text: ${elem.correct_answer}, correct: ${"true"}`};
   return returnCorrects;
 });
 console.log(corrects);
@@ -176,6 +176,13 @@ function crearObjetoDesdeArreglo(datos) {
 
 let propiedadesValores = [['question', questionGlobal],['answers', answers]];
 console.log(crearObjetoDesdeArreglo(propiedadesValores))
+
+//nuestro objeto
+const question = {
+  question: ['question', questionGlobal],
+  answers : ['answers', answers]
+}
+
 
 // empieza el codigo de sofi
 
