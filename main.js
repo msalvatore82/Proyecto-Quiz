@@ -30,18 +30,24 @@ function startGame() {
   setNextQuestion();
 }
 
+
 function showQuestion(question) {
+  
   questionElement.innerText = question.question;
   let answers = [];
+  
   question.incorrect_answers.forEach((incorrectAnswer) =>
     answers.push({ text: incorrectAnswer, correct: false })
   );
   answers.push({ text: question.correct_answer, correct: true });
-  console.log(answers);
+
+    answers.sort(function() {return Math.random() - 0.5});
+    console.log(answers);
     answers.forEach((answer) => {
     const button = document.createElement("button");
     button.innerText = answer.text;
 
+    
     if (answer.correct) {
       button.dataset.correct = true;
     }
