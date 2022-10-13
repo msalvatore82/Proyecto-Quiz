@@ -9,7 +9,8 @@
 }
 
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -18,7 +19,7 @@ header {
   display: flex;
   background: rgb(192, 50, 50);
   justify-content: center;
-  align-items:center
+  align-items: center
 }
 
 h1 {
@@ -42,7 +43,7 @@ body {
 #question-container {
   background: rgb(45, 177, 166);
   border-radius: 8px;
-  box-shadow: 13px 12px 32px 3px rgba(0,0,0,0.75);
+  box-shadow: 13px 12px 32px 3px rgba(0, 0, 0, 0.75);
   border: solid;
   padding: 20px 20px;
   width: 80vw;
@@ -74,20 +75,20 @@ body {
 }
 
 .hide {
-    display: none;
-  }
-  
-  .correct {
-    background-color: rgb(0, 255, 72);
-    border: solid;
-    
-    
-  }
-  
-  .wrong {
-    background-color: rgb(255, 0, 0);
-    border: solid;
-  }
+  display: none;
+}
+
+.correct {
+  background-color: rgb(0, 255, 72);
+  border: solid;
+
+
+}
+
+.wrong {
+  background-color: rgb(255, 0, 0);
+  border: solid;
+}
 
 
 #answer-buttons {
@@ -106,13 +107,13 @@ body {
   font-size: 18px;
 }
 
-  .botones {
-    margin: 100px;
-  }
+.botones {
+  margin: 100px;
+}
 
-  .tus_notas {
-    border: 2px solid red;
-  }
+.tus_notas {
+  border: 2px solid red;
+}
 
 button {
   color: rgb(4, 6, 6);
