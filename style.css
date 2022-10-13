@@ -27,6 +27,18 @@ body {
     background-color: rgb(255, 0, 0);
   }
 
+  .answer-buttons {
+    margin:  5px;
+  }
+
+  .botones {
+    margin: 100px;
+  }
+
+  .tus_notas {
+    border: 2px solid red;
+  }
+
 button {
   color: aqua;
 }
