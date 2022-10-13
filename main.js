@@ -4,7 +4,8 @@ const questionContainerElement = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 const notaElement = document.querySelector(".nota");
-
+const trivia_amount= document.getElementById("trivia_amount")
+const trivia_category= document.getElementById("trivia_category").value
 let currentQuestionIndex;
 let nota = 0;
 
@@ -12,7 +13,7 @@ let questions = [];
 
 function converData() {
   axios
-    .get("https://opentdb.com/api.php?amount=10&category=21")
+    .get(`https://opentdb.com/api.php?amount=${trivia_amount}&category=${trivia_category}`)
     .then((res) => {
       console.log(res.data.results);
       questions = res.data.results;
