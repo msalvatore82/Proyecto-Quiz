@@ -1,4 +1,4 @@
-//-------------------Variables para hacer SPA la página------------------------
+//-------------------Variables y funciones para hacer SPA la página------------------------
 
 const home = document.getElementById("home");
 
@@ -17,6 +17,8 @@ function goAbout() {
   home.classList.add("hide");
 
   encuesta.classList.remove("hide");
+
+  resultados.classList.add("hide")
 
 }
 
@@ -49,35 +51,7 @@ function goContact() {
   homeNav.addEventListener("click", goHome);
   resultadosNav.addEventListener("click", goContact);
 
-  // encuestaNav.addEventListener("click", goAbout);
-
-  // function goHome() {
-
-  //   encuesta.classList.add("hide");
-
-  //   home.classList.remove("hide");
-
-  // }
-
-  // homeNav.addEventListener("click", goHome);
-
-  // function hideView() {
-
-  //   home.classList.add("hide");
-
-  //   encuesta.classList.add("hide");
-
-  //   resultados.classList.add("hide");
-
-  //   }
-
-  //   function goContact() {
-
-  //     hideView();
-
-  //     resultados.classList.remove("hide");
-  //   }
-  //   resultadosNav.addEventListener("click", goContact);
+  
   //--------------------------------------------
 
   const startButton = document.getElementById("start-btn");
@@ -89,7 +63,7 @@ function goContact() {
   const trivia_amount = document.getElementById("trivia_amount");
   const type = document.getElementById("type")
   const e = document.getElementById("trivia_category")
-
+ //-------------------------------------------------
   let currentQuestionIndex;
   let nota = 0;
 
@@ -193,7 +167,6 @@ function goContact() {
 
       nextButton.classList.remove("hide");
     } else {
-
       startButton.innerText = "Restart";
       startButton.classList.remove("hide");
     }

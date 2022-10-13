@@ -8,6 +8,15 @@
   src: url(assets/fonts/Witch\ Bell.ttf);
 }
 
+@font-face {
+  font-family: "Painter";
+  src: url(assets/fonts/Wall-Painter.ttf);
+}
+
+@font-face {
+  font-family: "Creepy";
+  src: url(assets/fonts/Creepy\ Midnight.ttf);
+}
 
 html,
 body {
@@ -17,9 +26,53 @@ body {
 
 header {
   display: flex;
-  background: rgb(192, 50, 50);
-  justify-content: center;
-  align-items: center
+  background: transparent;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw;
+}
+
+#logo {
+  font-size: 60px;
+  font-family: "Painter";
+}
+
+nav {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 2vw;
+}
+
+.span-style{
+  font-size: 27px;
+  font-family: "Creepy";
+  text-shadow: 9px 4px 2px rgba(167,64,64,0.72);
+  position: relative;
+}
+
+.span-style:hover {
+  text-shadow: 0px 0px 8px #f6f7f9;
+}
+
+.span-style::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+  width: 0%;
+  height: 3px;
+  margin: auto 10%;
+  background: #ea6615;
+  transition: width 0.8s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ff0000;  
+  
+}
+
+.span-style:hover::after {
+  width: 80%;
+  margin: auto 10%;
+  
 }
 
 h1 {
@@ -34,19 +87,32 @@ body {
 }
 
 #start-btn {
-  width: 300px;
-  height: 150px;
+  width: 250px;
+  height: 110px;
   font-size: 45px;
   font-family: "Baby";
 }
 
+
+
+#contendor-encuesta {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30;
+  gap:1vw;
+}
+
+h2{
+  text-align: center;
+  font-size: 36px;
+}
+
 #question-container {
-  background: rgb(45, 177, 166);
+  background: #FFFAE7;
   border-radius: 8px;
   box-shadow: 13px 12px 32px 3px rgba(0, 0, 0, 0.75);
   border: solid;
   padding: 20px 20px;
-  width: 80vw;
 }
 
 #main-container {
@@ -54,7 +120,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 3vw;
+  padding: 20px 40px;
 }
 
 #type {

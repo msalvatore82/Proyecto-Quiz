@@ -9,14 +9,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+<header>
+
+<span id="logo">QuizGames</span>
+
 <nav>
+  <span id="homeNav" class="span-style">home</span>
 
-  <button id="homeNav">home</button>
+  <span id="encuestaNav" class="span-style">encuesta</span>
 
-  <button id="encuestaNav">encuesta</button>
-
-  <button id="resultadosNav">resultados</button>
+  <span id="resultadosNav" class="span-style">resultados</span>
 </nav>
+
+</header>
+
 
 <div id="home">
 
@@ -26,52 +32,57 @@
 
 <div id="encuesta" class="hide">
 
-  <div id=main-container>
-    <div>
-      <label for="trivia_amount">Numero de preguntas</label>
-      <input type="number" name="trivia_amount" id="trivia_amount" class="form-control" min="1" max="50" value="10">
-      <label for="trivia_category">Elija una categoria</label>
-      <select name="trivia_category" class="form-control" id="trivia_category">
-        <option value="any">Any Category</option>
-        <option value="9">General Knowledge</option>
-        <option value="10">Entertainment: Books</option>
-        <option value="11">Entertainment: Film</option>
-        <option value="12">Entertainment: Music</option>
-        <option value="13">Entertainment: Musicals &amp; Theatres</option>
-        <option value="14">Entertainment: Television</option>
-        <option value="15">Entertainment: Video Games</option>
-        <option value="16">Entertainment: Board Games</option>
-        <option value="17">Science & amp; Nature</option>
-        <option value="18">Science: Computers</option>
-        <option value="19">Science: Mathematics</option>
-        <option value="20">Mythology</option>
-        <option value="21">Sports</option>
-        <option value="22">Geography</option>
-        <option value="23">History</option>
-        <option value="24">Politics</option>
-        <option value="25">Art</option>
-        <option value="26">Celebrities</option>
-        <option value="27">Animals</option>
-        <option value="28">Vehicles</option>
-        <option value="29">Entertainment: Comics</option>
-        <option value="30">Science: Gadgets</option>
-        <option value="31">Entertainment: Japanese Anime & amp; Manga</option>
-        <option value="32">Entertainment: Cartoon &amp; Animations</option>
-      </select>
-    </div>
+  <div id="contendor-encuesta">
 
-    <div id="question-container" class="hide">
-      <div id="type"></div>
-      <hr>
-      <div id="question">Question</div>
-      <hr>
-      <div class="answer-buttons" id="answer-buttons"></div>
-      <hr>
-      <div class="nota"></div>
-    </div>
-    <div class="controls">
-      <button id="start-btn">Start</button>
-      <button id="next-btn" class="hide">Next</button>
+    <h2>¡Elige categoría y cantidad!</h2>
+
+    <div id=main-container>
+      <div>
+        <label for="trivia_amount">Numero de preguntas</label>
+        <input type="number" name="trivia_amount" id="trivia_amount" class="form-control" min="1" max="50" value="10">
+        <label for="trivia_category">Elija una categoria</label>
+        <select name="trivia_category" class="form-control" id="trivia_category">
+          <option value="any">Any Category</option>
+          <option value="9">General Knowledge</option>
+          <option value="10">Entertainment: Books</option>
+          <option value="11">Entertainment: Film</option>
+          <option value="12">Entertainment: Music</option>
+          <option value="13">Entertainment: Musicals &amp; Theatres</option>
+          <option value="14">Entertainment: Television</option>
+          <option value="15">Entertainment: Video Games</option>
+          <option value="16">Entertainment: Board Games</option>
+          <option value="17">Science & amp; Nature</option>
+          <option value="18">Science: Computers</option>
+          <option value="19">Science: Mathematics</option>
+          <option value="20">Mythology</option>
+          <option value="21">Sports</option>
+          <option value="22">Geography</option>
+          <option value="23">History</option>
+          <option value="24">Politics</option>
+          <option value="25">Art</option>
+          <option value="26">Celebrities</option>
+          <option value="27">Animals</option>
+          <option value="28">Vehicles</option>
+          <option value="29">Entertainment: Comics</option>
+          <option value="30">Science: Gadgets</option>
+          <option value="31">Entertainment: Japanese Anime & amp; Manga</option>
+          <option value="32">Entertainment: Cartoon &amp; Animations</option>
+        </select>
+      </div>
+
+      <div id="question-container" class="hide">
+        <div id="type"></div>
+        <hr>
+        <div id="question">Question</div>
+        <hr>
+        <div class="answer-buttons" id="answer-buttons"></div>
+        <hr>
+        <div class="nota"></div>
+      </div>
+      <div class="controls">
+        <button id="start-btn">Start</button>
+        <button id="next-btn" class="hide">Next</button>
+      </div>
     </div>
   </div>
 </div>
@@ -79,8 +90,8 @@
 <div id="resultados" class="hide">
 
   <h1>Resultados page</h1>
-  
-  </div>
+
+</div>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="main.js"></script>
 </body>
