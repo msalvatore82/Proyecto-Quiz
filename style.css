@@ -3,9 +3,14 @@ html, body {
   padding: 0;
 }
 
+header {
+  background: rgb(192, 50, 50);
+}
+
 body {
   background: #333;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -30,6 +35,18 @@ body {
   .answer-buttons {
     margin:  5px;
   }
+
+#answer-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nota {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
   .botones {
     margin: 100px;
