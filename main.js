@@ -35,11 +35,6 @@ function showQuestion(question) {
   
   questionElement.innerText = question.question;
 
-  const nodes = answerButtonsElement.getElementsByTagName('*');
-      for(var i = 0; i < nodes.length; i++){
-      nodes[i].disabled = true;
-      }
-
   let answers = [];
   question.incorrect_answers.forEach((incorrectAnswer) =>
     answers.push({ text: incorrectAnswer, correct: false })
@@ -60,6 +55,11 @@ function showQuestion(question) {
     button.addEventListener("click", function () {
 
       console.log(button.dataset.correct);
+
+      const nodes = answerButtonsElement.getElementsByTagName('*');
+      for(let i = 0; i < nodes.length; i++){
+      nodes[i].disabled = true;
+      }
 
       if (button.dataset.correct == "true") {
         nota++;

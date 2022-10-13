@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Baby";
+  src: url(assets/fonts/Hellobaby.ttf);
+}
+
+@font-face {
+  font-family: "Witch";
+  src: url(assets/fonts/Witch\ Bell.ttf);
+}
+
+
 html, body {
   margin: 0;
   padding: 0;
@@ -8,16 +19,43 @@ header {
 }
 
 body {
-  background: #333;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  gap: 5%;
+}
+
+#start-btn {
+  width: 300px;
+  height: 150px;
+  font-size: 45px;
+  font-family: "Baby";
 }
 
 #question-container {
   background: rgb(45, 177, 166);
+  border-radius: 8px;
+  box-shadow: 13px 12px 32px 3px rgba(0,0,0,0.75);
+  border: solid;
+}
+
+.type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0px;
+  font-size: 16px;
+}
+
+#question {
+  display: flex;
+  justify-content: center;
+  padding: 8px 10px;
+  font-size: 20px;
 }
 
 .hide {
@@ -26,26 +64,30 @@ body {
   
   .correct {
     background-color: rgb(0, 255, 72);
+    
+    
   }
   
   .wrong {
     background-color: rgb(255, 0, 0);
+    
   }
 
-  .answer-buttons {
-    margin:  5px;
-  }
 
 #answer-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5%;
+  padding: 10px 10px;
 }
 
 .nota {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px 0px;
+  font-size: 18px;
 }
 
   .botones {
@@ -57,5 +99,9 @@ body {
   }
 
 button {
-  color: aqua;
+  color: rgb(4, 6, 6);
+  border: 2px 2px #333;
+  border-radius: 4px;
+  font-family: "Witch";
+  font-size: 25px;
 }
