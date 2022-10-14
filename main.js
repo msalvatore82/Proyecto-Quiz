@@ -63,6 +63,7 @@ function goContact() {
   const trivia_amount = document.getElementById("trivia_amount");
   const type = document.getElementById("type")
   const e = document.getElementById("trivia_category")
+  const i = document.getElementById("trivia_amount")
  //-------------------------------------------------
   let currentQuestionIndex;
   let nota = 0;
@@ -71,7 +72,7 @@ function goContact() {
 
   function converData() {
     axios
-      .get(`https://opentdb.com/api.php?amount=10&category=14`)
+      .get(`https://opentdb.com/api.php?amount=${i.value}&category=${e.value}`)
       .then((res) => {
         console.log(res.data.results);
         questions = res.data.results;
@@ -82,12 +83,18 @@ function goContact() {
   converData();
 
   function startGame() {
-    converData();
     startButton.classList.add("hide");
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove("hide");
-    setNextQuestion();
-
+    axios
+    .get(`https://opentdb.com/api.php?amount=${i.value}&category=${e.value}`)
+    .then((res) => {
+      questions = res.data.results;
+      setNextQuestion();
+    })
+    .catch((err) => console.error(err));
+    
+   
   }
 
 
@@ -104,7 +111,7 @@ function goContact() {
     answers.push({ text: question.correct_answer, correct: true });
 
     answers.sort(function () { return Math.random() - 0.5 });
-    console.log(answers);
+    // console.log(answers);
     answers.forEach((answer) => {
       const button = document.createElement("button");
       button.innerText = answer.text;
@@ -116,7 +123,7 @@ function goContact() {
 
       button.addEventListener("click", function () {
 
-        console.log(button.dataset.correct);
+        // console.log(button.dataset.correct);
 
         const nodes = answerButtonsElement.getElementsByTagName('*');
         for (let i = 0; i < nodes.length; i++) {
@@ -126,7 +133,7 @@ function goContact() {
         if (button.dataset.correct == "true") {
           nota++;
           notaElement.innerHTML = "Tu puntuación: " + nota;
-          console.log(nota);
+          // console.log(nota);
 
         } else {
 
@@ -146,7 +153,7 @@ function goContact() {
 
   function setNextQuestion() {
     resetState();
-    console.log(questions);
+    // console.log(questions);
     showQuestion(questions[currentQuestionIndex]);
   }
 
