@@ -67,7 +67,7 @@ function goContact() {
   const triviaOptions = document.getElementById("trivias-options")
  //-------------------------------------------------
   let currentQuestionIndex;
-  // let nota = 0;
+  let nota = 0;
 
   let questions = [];
 
@@ -113,11 +113,15 @@ function goContact() {
     answers.push({ text: question.correct_answer, correct: true });
 
     answers.sort(function () { return Math.random() - 0.5 });
-    // console.log(answers);
-    answers.forEach((answer) => {
+    let color = ["red", "blue", "green", "yellow"]
+    let myArr =[];
+    let index = 0
+    answers.map((answer) => {
       const button = document.createElement("button");
       button.innerText = answer.text;
-
+      myArr.push(button)
+      myArr[index].style.setProperty("background-color", color[index])
+      index++
 
       if (answer.correct) {
         button.dataset.correct = true;
@@ -126,11 +130,12 @@ function goContact() {
       button.addEventListener("click", function () {
 
         // console.log(button.dataset.correct);
-
+       
         const nodes = answerButtonsElement.getElementsByTagName('*');
         for (let i = 0; i < nodes.length; i++) {
           nodes[i].disabled = true;
         }
+       
 
         if (button.dataset.correct == "true") {
           nota++;
@@ -149,6 +154,7 @@ function goContact() {
 
         selectAnswer();
       });
+
       answerButtonsElement.appendChild(button);
     });
   }
