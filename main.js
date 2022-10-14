@@ -65,9 +65,10 @@ function goContact() {
   const e = document.getElementById("trivia_category")
   const i = document.getElementById("trivia_amount")
   const triviaOptions = document.getElementById("trivias-options")
+  const homeButton = document.getElementById("btn-home")
  //-------------------------------------------------
   let currentQuestionIndex;
-  // let nota = 0;
+  let nota = 0;
 
   let questions = [];
 
@@ -85,9 +86,8 @@ function goContact() {
 
   function startGame() {
     startButton.classList.add("hide");
-    triviaOptions.classList.add("hide")
-    currentQuestionIndex = 0;
-    questionContainerElement.classList.remove("hide");
+    triviaOptions.classList.add("hide");
+    
     axios
     .get(`https://opentdb.com/api.php?amount=${i.value}&category=${e.value}`)
     .then((res) => {
@@ -95,8 +95,9 @@ function goContact() {
       setNextQuestion();
     })
     .catch((err) => console.error(err));
+    currentQuestionIndex = 0;
+    questionContainerElement.classList.remove("hide");
     
-   
   }
 
 
@@ -130,6 +131,7 @@ function goContact() {
         const nodes = answerButtonsElement.getElementsByTagName('*');
         for (let i = 0; i < nodes.length; i++) {
           nodes[i].disabled = true;
+
         }
 
         if (button.dataset.correct == "true") {
@@ -182,6 +184,8 @@ function goContact() {
   }
 
   startButton.addEventListener("click", startGame);
+
+  homeButton.addEventListener("click", goAbout)
 
   nextButton.addEventListener("click", () => {
     currentQuestionIndex++;
