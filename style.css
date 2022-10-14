@@ -107,6 +107,23 @@ h2{
   font-size: 36px;
 }
 
+#opciones-encuesta {
+  display: flex;
+  gap: 1em;
+}
+
+#trivia_amount {
+  border-radius: 8px;
+  text-align: center;
+  border: solid;
+}
+
+#trivia_category{
+  border-radius: 8px;
+  text-align: center;
+  border: solid;
+}
+
 #question-container {
   background: #FFFAE7;
   border-radius: 8px;
