@@ -64,9 +64,10 @@ function goContact() {
   const type = document.getElementById("type")
   const e = document.getElementById("trivia_category")
   const i = document.getElementById("trivia_amount")
+  const triviaOptions = document.getElementById("trivias-options")
  //-------------------------------------------------
   let currentQuestionIndex;
-  let nota = 0;
+  // let nota = 0;
 
   let questions = [];
 
@@ -84,6 +85,7 @@ function goContact() {
 
   function startGame() {
     startButton.classList.add("hide");
+    triviaOptions.classList.add("hide")
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove("hide");
     axios

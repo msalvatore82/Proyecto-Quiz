@@ -163,7 +163,7 @@ h2{
 }
 
 .correct {
-  background-color: rgb(0, 255, 72);
+  background-color: #72FFFF;
   border: solid;
 
 
@@ -205,4 +205,5 @@ button {
   border-radius: 4px;
   font-family: "Witch";
   font-size: 25px;
+  width: 10vw;
 }
