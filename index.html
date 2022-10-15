@@ -8,8 +8,8 @@
   <title>Quiz Game</title>
   <link rel="shortcut icon" href="assets/ICO/1665791899.ico" type="image/x-icon">
 
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+ 
 </head>
 <body>
   
@@ -31,10 +31,27 @@
 
 <div id="home">
 
-  
-  <button id = btn-home>Empezar</button>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form>
+      <div class="user-box">
+        <input type="text" name="nombre" placeholder="Nickname" id="nombre" autocomplete="off">
+        <label></label>
+      </div>
+      <div class="user-box">
+        <input type="text" required="" placeholder="Apodo" id="apodo" autocomplete="off">
+        <label></label>
+      </div>
+      <a href="#" id="btn-home">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Empezar a jugar
+      </a>
+    </form>
+  </div>
     
-
 </div>
 
 <div id="encuesta" class="hide">
@@ -45,7 +62,7 @@
 
     <div id="main-container">
 
-      <input type="text" name="nombre" id="nombre" placeholder="Nickname">
+    
 
       <div id="trivias-options">
 
@@ -147,6 +164,7 @@
       <div class="controls">
         <button id="start-btn">Start</button>
         <button id="next-btn" class="hide">Next</button>
+        <button id="restart-btn" class="hide">Restart</button>
       </div>
     </div>
   </div>

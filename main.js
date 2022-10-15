@@ -69,6 +69,7 @@ const i = document.getElementById("trivia_amount")
 const triviaOptions = document.getElementById("trivias-options")
 const homeButton = document.getElementById("btn-home")
 
+
 let currentQuestionIndex;
 let nota = 0;
 
@@ -227,7 +228,7 @@ function resetState() {
 
 //-------------------------Variables resultados------------------------
 
-const resultsContainer = document.getElementById("results-container")
+const resultsContainer = document.getElementById("resultados")
 // const nameInput = document.getElementById("nombre").value
 
 //--------------------------------------------------------------------
@@ -237,10 +238,13 @@ const resultadosUp = JSON.parse(localStorage.getItem("results")) || [];
 const nameData = document.getElementById("nombre")
 
 const sendData = () => {
+  
   const nameInput = document.getElementById("nombre").value
+  const apodoInput =document.getElementById("apodo").value
   const puntuacion = nota;
 
   const obj = {
+    apodoInput,
     nameInput,
     puntuacion,
   };
@@ -256,11 +260,11 @@ const paintResults = () => {
   resultsContainer.innerHTML = ""
   resultadosDown.forEach(results => {
     resultsContainer.innerHTML += `
-    <div>
-      <div class="card-body">
-      <h4 class="card-title">${results.nameInput}</h4>
-      <p class="card-text">${results.puntuacion}</p>
-      </div>
+    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+    <div class="card-header">${results.apodoInput}</div>
+    <div class="card-body">
+    <h4 class="card-title">${results.nameInput}</h4>
+    <p class="card-text">${results.puntuacion}</p>
     </div>
       `
 
