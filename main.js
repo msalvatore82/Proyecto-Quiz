@@ -114,7 +114,7 @@ function goContact() {
     answers.push({ text: question.correct_answer, correct: true });
 
     answers.sort(function () { return Math.random() - 0.5 });
-    let color = ["red", "blue", "green", "yellow"]
+    let color = ["#EE5656", "#EEDF56", "#56EE9C", "#56D3EE"]
     let myArr =[];
     let index = 0
     answers.map((answer) => {
@@ -205,3 +205,8 @@ function goContact() {
       answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
   }
+
+  
+
+  
+  
