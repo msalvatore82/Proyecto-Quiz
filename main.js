@@ -45,163 +45,224 @@ function goContact() {
   hideView();
 
   resultados.classList.remove("hide");
+
 }
 
-  encuestaNav.addEventListener("click", goAbout);
-  homeNav.addEventListener("click", goHome);
-  resultadosNav.addEventListener("click", goContact);
+encuestaNav.addEventListener("click", goAbout);
+homeNav.addEventListener("click", goHome);
+resultadosNav.addEventListener("click", goContact);
 
-  
-  //--------------------------------------------
 
-  const startButton = document.getElementById("start-btn");
-  const nextButton = document.getElementById("next-btn");
-  const questionContainerElement = document.getElementById("question-container");
-  const questionElement = document.getElementById("question");
-  const answerButtonsElement = document.getElementById("answer-buttons");
-  const notaElement = document.querySelector(".nota");
-  const trivia_amount = document.getElementById("trivia_amount");
-  const type = document.getElementById("type")
-  const e = document.getElementById("trivia_category")
-  const i = document.getElementById("trivia_amount")
-  const triviaOptions = document.getElementById("trivias-options")
-  const homeButton = document.getElementById("btn-home")
- //-------------------------------------------------
-  let currentQuestionIndex;
-  let nota = 0;
+//---------------------Variables encuesta-----------------------
 
-  let questions = [];
+const startButton = document.getElementById("start-btn");
+const nextButton = document.getElementById("next-btn");
+const restartButton = document.getElementById("restart-btn")
+const questionContainerElement = document.getElementById("question-container");
+const questionElement = document.getElementById("question");
+const answerButtonsElement = document.getElementById("answer-buttons");
+const notaElement = document.querySelector(".nota");
+const trivia_amount = document.getElementById("trivia_amount");
+const type = document.getElementById("type")
+const e = document.getElementById("trivia_category")
+const i = document.getElementById("trivia_amount")
+const triviaOptions = document.getElementById("trivias-options")
+const homeButton = document.getElementById("btn-home")
 
-  function converData() {
-    axios
-      .get(`https://opentdb.com/api.php?amount=${i.value}&category=${e.value}`)
-      .then((res) => {
-        console.log(res.data.results);
-        questions = res.data.results;
-      })
-      .catch((err) => console.error(err));
-  }
+let currentQuestionIndex;
+let nota = 0;
 
-  converData();
+let questions = [];
 
-  function startGame() {
-    startButton.classList.add("hide");
-    triviaOptions.classList.add("hide");
-    
-    axios
+// function converData() {
+//   axios
+//     .get(`https://opentdb.com/api.php?amount=${i.value}&category=${e.value}`)
+//     .then((res) => {
+//       console.log(res.data.results);
+//       questions = res.data.results;
+//     })
+//     .catch((err) => console.error(err));
+// }
+
+// converData();
+
+function startGame() {
+  axios
     .get(`https://opentdb.com/api.php?amount=${i.value}&category=${e.value}`)
     .then((res) => {
       questions = res.data.results;
       setNextQuestion();
     })
     .catch((err) => console.error(err));
-    currentQuestionIndex = 0;
-    questionContainerElement.classList.remove("hide");
-    
-  }
+  startButton.classList.add("hide");
+  triviaOptions.classList.add("hide");
+
+  currentQuestionIndex = 0;
+  questionContainerElement.classList.remove("hide");
+  nameData.classList.add("hide");
+}
 
 
-  function showQuestion(question) {
+function showQuestion(question) {
 
-    type.innerText = question.category;
+  type.innerText = question.category;
 
-    questionElement.innerText = question.question;
+  questionElement.innerText = question.question;
 
-    let answers = [];
-    question.incorrect_answers.forEach((incorrectAnswer) =>
-      answers.push({ text: incorrectAnswer, correct: false })
-    );
-    answers.push({ text: question.correct_answer, correct: true });
+  let answers = [];
+  question.incorrect_answers.forEach((incorrectAnswer) =>
+    answers.push({ text: incorrectAnswer, correct: false })
+  );
+  answers.push({ text: question.correct_answer, correct: true });
 
-    answers.sort(function () { return Math.random() - 0.5 });
-    let color = ["red", "blue", "green", "yellow"]
-    let myArr =[];
-    let index = 0
-    answers.map((answer) => {
-      const button = document.createElement("button");
-      button.innerText = answer.text;
-      myArr.push(button)
-      myArr[index].style.setProperty("background-color", color[index])
-      index++
+  answers.sort(function () { return Math.random() - 0.5 });
+  // let color = ["red", "blue", "green", "yellow"]
+  // let myArr =[];
+  // let index = 0
+  answers.map((answer) => {
+    const button = document.createElement("button");
+    button.innerText = answer.text;
+    // myArr.push(button)
+    // myArr[index].style.setProperty("background-color", color[index])
+    // index++
 
-      if (answer.correct) {
-        button.dataset.correct = true;
+    if (answer.correct) {
+      button.dataset.correct = true;
+    }
+
+    button.addEventListener("click", function () {
+
+      // console.log(button.dataset.correct);
+
+      const nodes = answerButtonsElement.getElementsByTagName('*');
+      for (let i = 0; i < nodes.length; i++) {
+        nodes[i].disabled = true;
       }
 
-      button.addEventListener("click", function () {
 
-        // console.log(button.dataset.correct);
-       
-        const nodes = answerButtonsElement.getElementsByTagName('*');
-        for (let i = 0; i < nodes.length; i++) {
-          nodes[i].disabled = true;
+      if (button.dataset.correct == "true") {
+        nota++;
+        notaElement.innerHTML = "Tu puntuación: " + nota;
+        // console.log(nota);
 
-        }
-       
+      } else {
 
-        if (button.dataset.correct == "true") {
-          nota++;
+        if (nota != 0) {
+          nota = nota - 0.5;
           notaElement.innerHTML = "Tu puntuación: " + nota;
-          // console.log(nota);
-
         } else {
-
-          if (nota != 0) {
-            nota = nota - 0.5;
-            notaElement.innerHTML = "Tu puntuación: " + nota;
-          } else {
-            notaElement.innerHTML = "Tu puntuación: " + nota;
-          }
+          notaElement.innerHTML = "Tu puntuación: " + nota;
         }
+      }
 
-        selectAnswer();
-      });
-
-      answerButtonsElement.appendChild(button);
+      selectAnswer();
     });
-  }
 
-  function setNextQuestion() {
-    resetState();
-    // console.log(questions);
-    showQuestion(questions[currentQuestionIndex]);
-  }
-
-  function setStatusClass(element, correct) {
-    //pinta la respuesta corre e incorrecta
-    if (correct) {
-      element.classList.add("correct");
-    } else {
-      element.classList.add("wrong");
-    }
-  }
-
-  function selectAnswer() {
-    Array.from(answerButtonsElement.children).forEach((button) => {
-      setStatusClass(button, button.dataset.correct);
-    });
-    if (questions.length > currentQuestionIndex + 1) {
-
-      nextButton.classList.remove("hide");
-    } else {
-      startButton.innerText = "Restart";
-      startButton.classList.remove("hide");
-    }
-  }
-
-  startButton.addEventListener("click", startGame);
-
-  homeButton.addEventListener("click", goAbout)
-
-  nextButton.addEventListener("click", () => {
-    currentQuestionIndex++;
-    setNextQuestion();
+    answerButtonsElement.appendChild(button);
   });
+}
 
-  function resetState() {
-    nextButton.classList.add("hide");
-    while (answerButtonsElement.firstChild) {
+function setNextQuestion() {
+  resetState();
+  // console.log(questions);
+  showQuestion(questions[currentQuestionIndex]);
+}
 
-      answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-    }
+function setStatusClass(element, correct) {
+  //pinta la respuesta corre e incorrecta
+  if (correct) {
+    element.classList.add("correct");
+  } else {
+    element.classList.add("wrong");
   }
+}
+
+function selectAnswer() {
+  Array.from(answerButtonsElement.children).forEach((button) => {
+    setStatusClass(button, button.dataset.correct);
+  });
+  if (questions.length > currentQuestionIndex + 1) {
+
+    nextButton.classList.remove("hide");
+  } else {
+    restartButton.classList.remove("hide");
+    sendData()
+    paintResults()
+  }
+}
+
+function clickReset() {
+  questionContainerElement.classList.add("hide")
+  startButton.classList.remove("hide")
+  restartButton.classList.add("hide")
+  triviaOptions.classList.remove("hide");
+  nameData.classList.remove("hide");
+  resetPlaceholder()
+}
+
+function resetPlaceholder() {
+  document.getElementById('nombre').value = '';
+}
+
+startButton.addEventListener("click", startGame);
+
+homeButton.addEventListener("click", goAbout)
+
+restartButton.addEventListener("click", clickReset)
+
+nextButton.addEventListener("click", () => {
+  currentQuestionIndex++;
+  setNextQuestion();
+});
+
+function resetState() {
+  nextButton.classList.add("hide");
+  while (answerButtonsElement.firstChild) {
+
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+  }
+}
+
+//----------------------Manipular Localstorage y pintar resultados
+
+//-------------------------Variables resultados------------------------
+
+const resultsContainer = document.getElementById("results-container")
+// const nameInput = document.getElementById("nombre").value
+
+//--------------------------------------------------------------------
+
+const resultadosUp = JSON.parse(localStorage.getItem("results")) || [];
+
+const nameData = document.getElementById("nombre")
+
+const sendData = () => {
+  const nameInput = document.getElementById("nombre").value
+  const puntuacion = nota;
+
+  const obj = {
+    nameInput,
+    puntuacion,
+  };
+
+  resultadosUp.push(obj);
+  localStorage.setItem("results", JSON.stringify(resultadosUp));
+};
+
+console.log(resultadosUp)
+
+const paintResults = () => {
+  const resultadosDown = JSON.parse(localStorage.getItem("results"))
+  resultsContainer.innerHTML = ""
+  resultadosDown.forEach(results => {
+    resultsContainer.innerHTML += `
+    <div>
+      <div class="card-body">
+      <h4 class="card-title">${results.nameInput}</h4>
+      <p class="card-text">${results.puntuacion}</p>
+      </div>
+    </div>
+      `
+
+  });
+}
