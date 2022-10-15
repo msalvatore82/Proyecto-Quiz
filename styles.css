@@ -95,9 +95,12 @@
     font-family: "Baby";
   }
   
-  .next-btn {
+  #next-btn {
     background-image: url("assets/GIF/next.gif") ;
-    
+    background-size: 100%;
+    width: 20vw;
+    color: transparent;
+    background-color: #962d22;
   }
   
   

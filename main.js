@@ -1,23 +1,16 @@
 //-------------------Variables y funciones para hacer SPA la página------------------------
 
 const home = document.getElementById("home");
-
 const encuesta = document.getElementById("encuesta");
-
 const homeNav = document.getElementById("homeNav");
-
 const encuestaNav = document.getElementById("encuestaNav");
-
 const resultados = document.getElementById("resultados");
-
 const resultadosNav = document.getElementById("resultadosNav");
 
 function goAbout() {
 
   home.classList.add("hide");
-
   encuesta.classList.remove("hide");
-
   resultados.classList.add("hide")
 
 }
@@ -25,18 +18,14 @@ function goAbout() {
 function goHome() {
 
   encuesta.classList.add("hide");
-
   home.classList.remove("hide");
-
   resultados.classList.add("hide");
 }
 
 function hideView() {
 
   home.classList.add("hide");
-
   encuesta.classList.add("hide");
-
   resultados.classList.add("hide");
 
 }
@@ -206,11 +195,8 @@ function resetPlaceholder() {
 }
 
 startButton.addEventListener("click", startGame);
-
 homeButton.addEventListener("click", goAbout)
-
 restartButton.addEventListener("click", clickReset)
-
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
