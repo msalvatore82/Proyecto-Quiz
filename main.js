@@ -228,7 +228,7 @@ function resetState() {
 
 //-------------------------Variables resultados------------------------
 
-const resultsContainer = document.getElementById("resultados")
+const resultsContainer = document.getElementById("resultados-box")
 // const nameInput = document.getElementById("nombre").value
 
 //--------------------------------------------------------------------
@@ -260,13 +260,14 @@ const paintResults = () => {
   resultsContainer.innerHTML = ""
   resultadosDown.forEach(results => {
     resultsContainer.innerHTML += `
-    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-    <div class="card-header">${results.apodoInput}</div>
-    <div class="card-body">
-    <h4 class="card-title">${results.nameInput}</h4>
-    <p class="card-text">${results.puntuacion}</p>
-    </div>
-      `
-
-  });
+    <figure class="snip0056">
+    <figcaption>
+      <h2>${results.nameInput}<br><span>${results.apodoInput}</span></h2>
+      <p class="p-card">Puntuación de ${nota} sobre 10.</p>
+      <div class="icons"><a href="#"><i class="ion-ios-home"></i></a><a href="#"><i class="ion-ios-email"></i></a><a href="#"><i class="ion-ios-telephone"></i></a></div>
+    </figcaption><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample8.jpg" alt="sample8" />
+    <div class="position">Categoría elegida irá aquí</div>
+  </figure>
+        `
+    });
 }
