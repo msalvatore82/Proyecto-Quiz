@@ -55,6 +55,7 @@ const trivia_amount = document.getElementById("trivia_amount");
 const type = document.getElementById("type")
 const e = document.getElementById("trivia_category")
 const i = document.getElementById("trivia_amount")
+const u = document.getElementById("trivia_difficulty")
 const triviaOptions = document.getElementById("trivias-options")
 const homeButton = document.getElementById("btn-home")
 
@@ -78,7 +79,7 @@ let questions = [];
 
 function startGame() {
   axios
-    .get(`https://opentdb.com/api.php?amount=${i.value}&category=${e.value}`)
+    .get(`https://opentdb.com/api.php?amount=${i.value}&category=${e.value}&difficulty=${u.value}`)
     .then((res) => {
       questions = res.data.results;
       setNextQuestion();

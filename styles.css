@@ -121,12 +121,17 @@
     gap: 1em;
   }
   
-  label{
+  /* label{
     font-size:25px;
     font-weight:700;
     font-family: 'Roboto', sans-serif;
     margin: 30px;
     margin-bottom: 10px;
+  } */
+
+  .trivias-options {
+    margin: 30px;
+    padding: 20px;
   }
   
   #trivia_amount {
@@ -138,6 +143,7 @@
     border: solid;
     height: 3em;
     width: 21em;
+    margin: 10px;
   }
   
   #trivia_category{
@@ -149,6 +155,19 @@
     font-size: 20px;
     height: 3em;
     width: 21em;
+    margin: 10px;
+  }
+
+  #trivia_difficulty {
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight:700;
+    border: solid;
+    font-size: 20px;
+    height: 3em;
+    width: 21em;
+    margin: 10px;
   }
   
   #question-container {
