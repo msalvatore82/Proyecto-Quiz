@@ -262,7 +262,7 @@ const paintResults = () => {
     resultsContainer.innerHTML += `
     <figure class="snip0056">
     <figcaption>
-      <h2>${results.nameInput}<br><span>${results.apodoInput}</span></h2>
+      <h2>${results.nameInput}<br><span>"${results.apodoInput}"</span></h2>
       <p class="p-card">Puntuación de ${nota} sobre 10.</p>
       <div class="icons"><a href="#"><i class="ion-ios-home"></i></a><a href="#"><i class="ion-ios-email"></i></a><a href="#"><i class="ion-ios-telephone"></i></a></div>
     </figcaption><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample8.jpg" alt="sample8" />
