@@ -34,6 +34,7 @@ function goContact() {
   hideView();
 
   resultados.classList.remove("hide");
+  paintResults()
 
 }
 
@@ -201,6 +202,7 @@ function clickReset() {
   restartButton.classList.add("hide")
   triviaOptions.classList.remove("hide");
   nameData.classList.remove("hide");
+  scoreButonn.classList.add("hide")
   resetPlaceholder()
 }
 

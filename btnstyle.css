@@ -1,0 +1,108 @@
+#start-btn {
+    --glow-color: rgb(176, 218, 255);
+    --glow-spread-color: #293462;
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color:#293462;
+    border: .25em solid var(--glow-color);
+    color: var(--glow-color);
+    font-size: 2em;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 0.5em .25em var(--glow-color),
+           0 0 2em 0.5em var(--glow-spread-color),
+           inset 0 0 1em .25em var(--glow-color);
+    text-shadow: 0 0 .2em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+   }
+   
+   #start-btn::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(1em);
+    opacity: .7;
+    transform: perspective(1em) rotateX(35deg) scale(1, .6);
+   }
+   
+   #start-btn:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 2em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+   }
+   
+   #start-btn:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 1.5em 1em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+   }
+
+   button {
+    color: rgb(4, 6, 6);
+    border: 2px 2px #333;
+    border-radius: 7px;
+    font-family: "Witch";
+    font-size: 25px;
+    width: 10vw;
+    height: 8vw;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  -webkit-box-shadow: 10px 10px 69px 13px rgba(0,0,0,0.5);
+  -moz-box-shadow: 10px 10px 69px 13px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 69px 13px rgba(0,0,0,0.5);
+  } 
+  
+  .btn-home {
+    font-size: 40px;
+    width: 25vw;
+    height: 16vw;
+  }
+  
+  .correct {
+    background-color: rgba(26,212,85,0.45);
+    border: solid;
+    -webkit-box-shadow: 0px 0px 9px 10px rgba(107,255,151,1);
+  -moz-box-shadow: 0px 0px 9px 10px rgba(107,255,151,1);
+  box-shadow: 0px 0px 9px 10px rgba(107,255,151,1);
+  
+  
+  }
+  
+  .wrong {
+    background-color: rgb(209, 75, 75);
+  border: solid black;
+  font-size: 50px;
+  color: red;
+  text-shadow: #333;
+    
+  }
+  
+  #answer-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    padding: 10px 10px;
+  }
+
+  
+  #next-btn {
+    background-image: url("assets/GIF/next.gif") ;
+    background-size: 100%;
+    width: 20vw;
+    color: transparent;
+    background-color: transparent;
+    text-shadow: #03e9f4;
+  }
+  

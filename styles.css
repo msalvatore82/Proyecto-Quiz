@@ -92,22 +92,6 @@
     height: 100vh;
   }
   
-  #start-btn {
-    width: 200px;
-    height: 110px;
-    font-size: 45px;
-    font-family: "Baby";
-  }
-  
-  #next-btn {
-    background-image: url("assets/GIF/next.gif") ;
-    background-size: 100%;
-    width: 20vw;
-    color: transparent;
-    background-color: #962d22;
-  }
-  
-  
   #contendor-encuesta {
     display: flex;
     flex-direction: column;
@@ -189,7 +173,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3vw;
     padding: 20px 40px;
   }
   
@@ -220,33 +203,6 @@
     display: none;
   }
   
-  .correct {
-    background-color: rgba(26,212,85,0.45);
-    border: solid;
-    -webkit-box-shadow: 0px 0px 9px 10px rgba(107,255,151,1);
-  -moz-box-shadow: 0px 0px 9px 10px rgba(107,255,151,1);
-  box-shadow: 0px 0px 9px 10px rgba(107,255,151,1);
-  
-  
-  }
-  
-  .wrong {
-    background-color: rgb(209, 75, 75);
-  border: solid black;
-  font-size: 50px;
-  color: red;
-  text-shadow: #333;
-    
-  }
-  
-  #answer-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5%;
-    padding: 10px 10px;
-  }
-  
   .nota {
     display: flex;
     justify-content: center;
@@ -263,28 +219,6 @@
     border: 2px solid red;
   }
   
-  button {
-    color: rgb(4, 6, 6);
-    border: 2px 2px #333;
-    border-radius: 7px;
-    font-family: "Witch";
-    font-size: 25px;
-    width: 10vw;
-    height: 8vw;
-  }
-  
-  button:hover {
-    cursor: pointer;
-  -webkit-box-shadow: 10px 10px 69px 13px rgba(0,0,0,0.5);
-  -moz-box-shadow: 10px 10px 69px 13px rgba(0,0,0,0.5);
-  box-shadow: 10px 10px 69px 13px rgba(0,0,0,0.5);
-  } 
-  
-  .btn-home {
-    font-size: 40px;
-    width: 25vw;
-    height: 16vw;
-  }
   
   
   .login-box {
