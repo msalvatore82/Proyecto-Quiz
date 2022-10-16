@@ -68,18 +68,6 @@ let nota = 0;
 
 let questions = [];
 
-// function converData() {
-//   axios
-//     .get(`https://opentdb.com/api.php?amount=${i.value}&category=${e.value}`)
-//     .then((res) => {
-//       console.log(res.data.results);
-//       questions = res.data.results;
-//     })
-//     .catch((err) => console.error(err));
-// }
-
-// converData();
-
 function startGame() {
   axios
     .get(`https://opentdb.com/api.php?amount=${i.value}&category=${e.value}&difficulty=${u.value}`)
@@ -247,13 +235,12 @@ const resultsContainer = document.getElementById("resultados-box")
 
 const resultadosUp = JSON.parse(localStorage.getItem("results")) || [];
 
-const nameData = document.getElementById("nombre")
-
 const sendData = () => {
   
   const nameInput = document.getElementById("nombre").value
   const apodoInput =document.getElementById("apodo").value
   const amountValue = document.getElementById("trivia_amount").value
+  const avatarValue = document.getElementById("avatar").value
   const puntuacion = nota;
 
   
@@ -263,6 +250,7 @@ const sendData = () => {
     nameInput,
     puntuacion,
     amountValue,
+    avatarValue
   };
 
   resultadosUp.push(obj);
@@ -281,7 +269,7 @@ const paintResults = () => {
       <h2>${results.nameInput}<br><span>"${results.apodoInput}"</span></h2>
       <p class="p-card">Puntuación de ${nota} sobre ${results.amountValue}.</p>
       <div class="icons"></div>
-    </figcaption><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample8.jpg" alt="sample8" />
+    </figcaption><img src="${results.avatarValue}" alt="sample8" />
     <div class="position">Categoría elegida irá aquí</div>
   </figure>
         `

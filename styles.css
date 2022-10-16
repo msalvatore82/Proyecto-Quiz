@@ -4,6 +4,11 @@
   }
   
   @font-face {
+    font-family: "Deliver";
+    src: url(assets/fonts/The\ Deliver.otf);
+  }
+
+  @font-face {
     font-family: "Witch";
     src: url(assets/fonts/Witch\ Bell.ttf);
   }
@@ -47,8 +52,8 @@
   
   .span-style{
     font-size: 27px;
-    font-family: "Creepy";
-    text-shadow: 9px 4px 2px rgba(167,64,64,0.72);
+    font-family: "Deliver";
+    text-shadow: 2px 2px 6px rgba(251, 246, 246, 0.72);
     position: relative;
   }
   
@@ -159,7 +164,8 @@
   }
   
   #question-container {
-    background: #FFFAE7;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     width: 65%;
     border-radius: 10px;
     box-shadow: 13px 12px 32px 3px rgba(0, 0, 0, 0.75);
