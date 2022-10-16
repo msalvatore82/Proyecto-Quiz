@@ -11,8 +11,8 @@ function goAbout() {
 
   home.classList.add("hide");
   encuesta.classList.remove("hide");
-  resultados.classList.add("hide")
-
+  resultados.classList.add("hide");
+  clickReset ()
 }
 
 function goHome() {
@@ -46,7 +46,8 @@ resultadosNav.addEventListener("click", goContact);
 
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
-const restartButton = document.getElementById("restart-btn")
+const restartButton = document.getElementById("restart-btn");
+const scoreButonn= document.getElementById("score-btn");
 const questionContainerElement = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
@@ -61,6 +62,7 @@ const homeButton = document.getElementById("btn-home")
 
 
 let currentQuestionIndex;
+
 let nota = 0;
 
 let questions = [];
@@ -177,8 +179,19 @@ function selectAnswer() {
     nextButton.classList.remove("hide");
   } else {
     restartButton.classList.remove("hide");
+    scoreButonn.classList.remove("hide");
     sendData()
     paintResults()
+    resetScore()
+  }
+}
+
+function resetScore() {
+  if (nota != 0) {
+    nota = 0;
+    notaElement.innerHTML = "Tu puntuación: " + nota;
+  } else {
+    notaElement.innerHTML = "Tu puntuación: " + nota;
   }
 }
 
@@ -191,13 +204,23 @@ function clickReset() {
   resetPlaceholder()
 }
 
+function clickScore() {
+  questionContainerElement.classList.add("hide")
+  restartButton.classList.add("hide")
+  scoreButonn.classList.add("hide")
+  resetPlaceholder()
+  goContact()
+}
+
 function resetPlaceholder() {
   document.getElementById('nombre').value = '';
+  document.getElementById('apodo').value = '';
 }
 
 startButton.addEventListener("click", startGame);
 homeButton.addEventListener("click", goAbout)
-restartButton.addEventListener("click", clickReset)
+restartButton.addEventListener("click", clickReset);
+scoreButonn.addEventListener("click", clickScore)
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
@@ -228,12 +251,16 @@ const sendData = () => {
   
   const nameInput = document.getElementById("nombre").value
   const apodoInput =document.getElementById("apodo").value
+  const amountValue = document.getElementById("trivia_amount").value
   const puntuacion = nota;
+
+  
 
   const obj = {
     apodoInput,
     nameInput,
     puntuacion,
+    amountValue,
   };
 
   resultadosUp.push(obj);
@@ -250,8 +277,8 @@ const paintResults = () => {
     <figure class="snip0056">
     <figcaption>
       <h2>${results.nameInput}<br><span>"${results.apodoInput}"</span></h2>
-      <p class="p-card">Puntuación de ${nota} sobre 10.</p>
-      <div class="icons"><a href="#"><i class="ion-ios-home"></i></a><a href="#"><i class="ion-ios-email"></i></a><a href="#"><i class="ion-ios-telephone"></i></a></div>
+      <p class="p-card">Puntuación de ${nota} sobre ${results.amountValue}.</p>
+      <div class="icons"></div>
     </figcaption><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample8.jpg" alt="sample8" />
     <div class="position">Categoría elegida irá aquí</div>
   </figure>

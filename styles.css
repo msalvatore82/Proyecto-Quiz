@@ -77,14 +77,18 @@
     
   }
   
+::placeholder{
+  text-align: center;
+}
+
   h1 {
     text-align: center;
     margin: 25px 0px;
   }
   
   body {
-    background-color: #FBAB7E;
-    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #1d6567 100%);
     height: 100vh;
   }
   
@@ -559,7 +563,10 @@
   
   #resultados-box {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
   }
+
+  
