@@ -12,7 +12,7 @@ function goAbout() {
   home.classList.add("hide");
   encuesta.classList.remove("hide");
   resultados.classList.add("hide");
-  clickReset ()
+  clickReset()
 }
 
 function goHome() {
@@ -48,7 +48,7 @@ resultadosNav.addEventListener("click", goContact);
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const restartButton = document.getElementById("restart-btn");
-const scoreButonn= document.getElementById("score-btn");
+const scoreButonn = document.getElementById("score-btn");
 const questionContainerElement = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
@@ -81,7 +81,7 @@ function startGame() {
 
   currentQuestionIndex = 0;
   questionContainerElement.classList.remove("hide");
-  // nameData.classList.add("hide");
+  console.log(err)
 }
 
 
@@ -97,16 +97,16 @@ function showQuestion(question) {
   );
   answers.push({ text: question.correct_answer, correct: true });
 
-    answers.sort(function () { return Math.random() - 0.5 });
-    let color = ["#EE5656", "#EEDF56", "#56EE9C", "#56D3EE"]
-    let myArr =[];
-    let index = 0
-    answers.map((answer) => {
-      const button = document.createElement("button");
-      button.innerText = answer.text;
-      myArr.push(button)
-      myArr[index].style.setProperty("background-color", color[index])
-      index++
+  answers.sort(function () { return Math.random() - 0.5 });
+  let color = ["#EE5656", "#EEDF56", "#56EE9C", "#56D3EE"]
+  let myArr = [];
+  let index = 0
+  answers.map((answer) => {
+    const button = document.createElement("button");
+    button.innerText = answer.text;
+    myArr.push(button)
+    myArr[index].style.setProperty("background-color", color[index])
+    index++
 
     if (answer.correct) {
       button.dataset.correct = true;
@@ -189,7 +189,7 @@ function clickReset() {
   startButton.classList.remove("hide")
   restartButton.classList.add("hide")
   triviaOptions.classList.remove("hide");
-  // nameData.classList.remove("hide");
+  nameData.classList.remove("hide");
   scoreButonn.classList.add("hide")
   resetPlaceholder()
 }
@@ -226,77 +226,97 @@ function resetState() {
 
 //----------------------Manipular Localstorage y pintar resultados
 
-//-------------------------Variables resultados------------------------
-
 const resultsContainer = document.getElementById("resultados-box")
-// const nameInput = document.getElementById("nombre").value
 
 //--------------------------------------------------------------------
 
 const resultadosUp = JSON.parse(localStorage.getItem("results")) || [];
 
-const sendData = () => {
-  
-  const nameInput = document.getElementById("nombre").value
-  const apodoInput =document.getElementById("apodo").value
-  const amountValue = document.getElementById("trivia_amount").value
-  const avatarValue = document.getElementById("avatar").value
-  const puntuacion = nota;
-
-  
-
-  const obj = {
-    apodoInput,
-    nameInput,
-    puntuacion,
-    amountValue,
-    avatarValue
-  };
-
-  resultadosUp.push(obj);
-  localStorage.setItem("results", JSON.stringify(resultadosUp));
-};
-
-console.log(resultadosUp)
-
-const paintResults = () => {
-  const resultadosDown = JSON.parse(localStorage.getItem("results"))
-  resultsContainer.innerHTML = ""
-  resultadosDown.forEach(results => {
-    resultsContainer.innerHTML += `
-    <figure class="snip0056">
-    <figcaption>
-      <h2>${results.nameInput}<br><span>"${results.apodoInput}"</span></h2>
-      <p class="p-card">Puntuación de ${nota} sobre ${results.amountValue}.</p>
-      <div class="icons"></div>
-    </figcaption><img src="${results.avatarValue}" alt="sample8" />
-    <div class="position">Categoría elegida irá aquí</div>
-  </figure>
-        `
-    });
-}
-
+let countImage = 1
 
 let slideIndex = 1;
 showSlides(slideIndex)
 
 
-function plusSlides(n){
-    showSlides(slideIndex += n)
-}
-function currentSlide(n){
-    showSlides(slideIndex = n)
-}
-function showSlides(n){
-    let i;
-    let slides = document.querySelectorAll(".mySlides");
-  
-    if(n > slides.length) slideIndex = 1
-    if(n < 1) slideIndex = slides.length
-    for(i = 0; i < slides.length; i++){
-        slides[i].style.display = "none"
+
+
+const sendData = () => {
+
+  const nameInput = document.getElementById("nombre").value
+  const apodoInput = document.getElementById("apodo").value
+  const amountValue = document.getElementById("trivia_amount").value
+  const triviaCategory = document.getElementById("trivia_category").value
+  const puntuacion = nota;
+  const porCiento = ((nota / amountValue) * 100).toFixed(1)
+
+  const difficulty = document.getElementById("trivia_difficulty").value
+  var str = difficulty;
+  str = str.toLowerCase().replace(/\b[a-z]/g, function (letter) {
+    return letter.toUpperCase();
+  });
+
+  console.log(porCiento)
+  const obj = {
+    apodoInput,
+    nameInput,
+    puntuacion,
+    amountValue,
+    slideIndex,
+    porCiento,
+    triviaCategory,
+    str
+  };
+
+  resultadosUp.push(obj);
+  localStorage.setItem("results", JSON.stringify(resultadosUp));
+
+  function resetCountimage() {
+    if (countImage != 1) {
+      countImage = 0;
     }
-    
-    slides[slideIndex-1].style.display = "block";
-    
+  }
+  resetCountimage()
+};
+
+const paintResults = async () => {
+  const resultadosDown = JSON.parse(localStorage.getItem("results"))
+  resultsContainer.innerHTML = ""
+  // const res = await axios.get("https://opentdb.com/api_category.php")
+  // const categories = res.data.trivia_categories
+  resultadosDown.forEach(results => {
+    // const category = categories.filter(category => category.id == +results.triviaCategory)
+
+    resultsContainer.innerHTML += `
+    <figure class="snip0056">
+    <figcaption>
+      <h2>${results.nameInput}<br><span>"${results.apodoInput}"</span></h2>
+      <p class="p-card">Puntuación de ${nota} sobre ${results.amountValue}.</p>
+      <p class= "p-card">${results.porCiento} % de acierto</p>
+      <p class= "p-card">${results.str}</p>
+    </figcaption><img src="./assets/super/${results.slideIndex}.png" alt="sample8" />
+    <div class="position"></div>
+  </figure>
+        `
+  });
+}
+
+
+function plusSlides(n) {
+  showSlides(slideIndex += n)
+}
+function currentSlide(n) {
+  showSlides(slideIndex = n)
+}
+function showSlides(n) {
+  let i;
+  let slides = document.querySelectorAll(".mySlides");
+
+  if (n > slides.length) slideIndex = 1
+  if (n < 1) slideIndex = slides.length
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none"
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+
 }

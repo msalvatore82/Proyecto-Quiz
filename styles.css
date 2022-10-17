@@ -1,120 +1,120 @@
 @font-face {
-    font-family: "Baby";
-    src: url(assets/fonts/Hellobaby.ttf);
-  }
-  
-  @font-face {
-    font-family: "Deliver";
-    src: url(assets/fonts/The\ Deliver.otf);
-  }
+  font-family: "Baby";
+  src: url(assets/fonts/Hellobaby.ttf);
+}
 
-  @font-face {
-    font-family: "Witch";
-    src: url(assets/fonts/Witch\ Bell.ttf);
-  }
-  
-  @font-face {
-    font-family: "Painter";
-    src: url(assets/fonts/Wall-Painter.ttf);
-  }
-  
-  @font-face {
-    font-family: "Creepy";
-    src: url(assets/fonts/Creepy\ Midnight.ttf);
-  }
-  
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap');
-  
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    display: flex;
-    background: transparent;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2vw;
-  }
-  
-  #logo {
-    font-size: 60px;
-    font-family: "Painter";
-  }
-  
-  nav {
-    display: flex;
-    /* flex-direction: column; */
-    gap: 2vw;
-  }
-  
-  .span-style{
-    font-size: 27px;
-    font-family: "Deliver";
-    text-shadow: 2px 2px 6px rgba(251, 246, 246, 0.72);
-    position: relative;
-  }
-  
-  .span-style:hover {
-    text-shadow: 0px 0px 8px #f6f7f9;
-  }
-  
-  .span-style::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0; 
-    width: 0%;
-    height: 3px;
-    margin: auto 10%;
-    background: #ea6615;
-    transition: width 0.8s;
-    border-radius: 10px;
-    box-shadow: 0px 0px 6px #ff0000;  
-    
-  }
-  
-  .span-style:hover::after {
-    width: 80%;
-    margin: auto 10%;
-    
-  }
-  
-::placeholder{
+@font-face {
+  font-family: "Deliver";
+  src: url(assets/fonts/The\ Deliver.otf);
+}
+
+@font-face {
+  font-family: "Witch";
+  src: url(assets/fonts/Witch\ Bell.ttf);
+}
+
+@font-face {
+  font-family: "Painter";
+  src: url(assets/fonts/Wall-Painter.ttf);
+}
+
+@font-face {
+  font-family: "Creepy";
+  src: url(assets/fonts/Creepy\ Midnight.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  background: transparent;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw;
+}
+
+#logo {
+  font-size: 60px;
+  font-family: "Painter";
+}
+
+nav {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 2vw;
+}
+
+.span-style {
+  font-size: 27px;
+  font-family: "Deliver";
+  text-shadow: 2px 2px 6px rgba(251, 246, 246, 0.72);
+  position: relative;
+}
+
+.span-style:hover {
+  text-shadow: 0px 0px 8px #f6f7f9;
+}
+
+.span-style::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  margin: auto 10%;
+  background: #ea6615;
+  transition: width 0.8s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ff0000;
+
+}
+
+.span-style:hover::after {
+  width: 80%;
+  margin: auto 10%;
+
+}
+
+::placeholder {
   text-align: center;
 }
 
-  h1 {
-    text-align: center;
-    margin: 25px 0px;
-  }
-  
-  body {
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #1d6567 100%);
-    height: 100vh;
-  }
-  
-  #contendor-encuesta {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 30;
-    gap:1vw;
-  }
-  
-  h2{
-    text-align: center;
-    font-size: 36px;
-  }
-  
-  #opciones-encuesta {
-    display: flex;
-    gap: 1em;
-  }
-  
-  /* label{
+h1 {
+  text-align: center;
+  margin: 25px 0px;
+}
+
+body {
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #1d6567 100%);
+  height: 100vh;
+}
+
+#contendor-encuesta {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30;
+  gap: 1vw;
+}
+
+h2 {
+  text-align: center;
+  font-size: 36px;
+}
+
+#opciones-encuesta {
+  display: flex;
+  gap: 1em;
+}
+
+/* label{
     font-size:25px;
     font-weight:700;
     font-family: 'Roboto', sans-serif;
@@ -122,391 +122,414 @@
     margin-bottom: 10px;
   } */
 
-  .trivias-options {
-    margin: 30px;
-    padding: 20px;
-  }
-  
-  #trivia_amount {
-    border-radius: 8px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight:700;
-    font-size: 20px;
-    border: solid;
-    height: 3em;
-    width: 21em;
-    margin: 10px;
-  }
-  
-  #trivia_category{
-    border-radius: 8px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight:700;
-    border: solid;
-    font-size: 20px;
-    height: 3em;
-    width: 21em;
-    margin: 10px;
-  }
-
-  #trivia_difficulty {
-    border-radius: 8px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight:700;
-    border: solid;
-    font-size: 20px;
-    height: 3em;
-    width: 21em;
-    margin: 10px;
-  }
-  
-  #question-container {
-    background-color: #8BC6EC;
-    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
-    width: 65%;
-    border-radius: 10px;
-    box-shadow: 13px 12px 32px 3px rgba(0, 0, 0, 0.75);
-    border: solid;
-    padding: 20px 20px;
-   
-  }
-  
-  #main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 40px;
-  }
-  
-  #type {
-    display: flex;
-    font-family: 'Roboto', sans-serif;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 0px;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration:underline 2px gray;
-    font-style: italic;
-    
-  }
-  
-  #question {
-    display: flex;
-    font-family: 'Roboto', sans-serif;
-    justify-content: center;
-    padding: 8px 10px;
-    font-size: 25px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .hide {
-    display: none;
-  }
-  
-  .nota {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0px;
-    font-size: 30px;
-  }
-  
-  .botones {
-    margin: 100px;
-  }
-  
-  .tus_notas {
-    border: 2px solid red;
-  }
-  
-  
-  
-  .login-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
-  }
-  
-  .login-box h2 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .login-box .user-box {
-    position: relative;
-  }
-  
-  .login-box .user-box input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-  }
-  .login-box .user-box label {
-    position: absolute;
-    top:0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: .5s;
-  }
-  
-  .login-box .user-box input:focus ~ label,
-  .login-box .user-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: #03e9f4;
-    font-size: 12px;
-  }
-  
-  .login-box form a {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #03e9f4;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .5s;
-    margin-top: 40px;
-    letter-spacing: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    
-  }
-  
-  .login-box a:hover {
-    background: #03e9f4;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4,
-                0 0 100px #03e9f4;
-  }
-  
-  .login-box a span {
-    position: absolute;
-    display: block;
-  }
-  
-  .login-box a span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #03e9f4);
-    animation: btn-anim1 1s linear infinite;
-  }
-  
-  @keyframes btn-anim1 {
-    0% {
-      left: -100%;
-    }
-    50%,100% {
-      left: 100%;
-    }
-  }
-  
-  .login-box a span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #03e9f4);
-    animation: btn-anim2 1s linear infinite;
-    animation-delay: .25s
-  }
-  
-  @keyframes btn-anim2 {
-    0% {
-      top: -100%;
-    }
-    50%,100% {
-      top: 100%;
-    }
-  }
-  
-  .login-box a span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #03e9f4);
-    animation: btn-anim3 1s linear infinite;
-    animation-delay: .5s
-  }
-  
-  @keyframes btn-anim3 {
-    0% {
-      right: -100%;
-    }
-    50%,100% {
-      right: 100%;
-    }
-  }
-  
-  .login-box a span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #03e9f4);
-    animation: btn-anim4 1s linear infinite;
-    animation-delay: .75s
-  }
-  
-  @keyframes btn-anim4 {
-    0% {
-      bottom: -100%;
-    }
-    50%,100% {
-      bottom: 100%;
-    }
-  }
-
-  @property --rotate {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-  }
-  
-  @import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,800);
-  @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
-  figure.snip0056 {
-    font-family: 'Raleway', Arial, sans-serif;
-    position: relative;
-    overflow: hidden;
-    margin: 10px;
-    min-width: 380px;
-    max-width: 480px;
-    width: 100%;
-    background: #ffffff;
-    color: #000000;
-    border-radius: 8px;
-  }
-
-.p-card{
-    font-size: 15px;
+.trivias-options {
+  margin: 30px;
+  padding: 20px;
 }
 
-  figure.snip0056 * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  figure.snip0056 > img {
-    width: 50%;
-    border-radius: 50%;
-    border: 4px solid #ffffff;
-    -webkit-transition: all 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
-    -webkit-transform: scale(1.6);
-    transform: scale(1.6);
-    position: relative;
-    float: right;
-    right: -15%;
-    z-index: 1;
-  }
-  figure.snip0056 figcaption {
-    padding: 20px 30px 20px 20px;
-    position: absolute;
-    left: 0;
-    width: 50%;
-  }
-  figure.snip0056 figcaption h2,
-  figure.snip0056 figcaption p {
-    margin: 0;
-    text-align: left;
-    padding: 10px 0;
-    width: 100%;
-  }
-  figure.snip0056 figcaption h2 {
-    font-size: 1.3em;
-    font-weight: 300;
-    text-transform: uppercase;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  }
-  figure.snip0056 figcaption h2 span {
-    font-weight: 800;
-  }
-  figure.snip0056 figcaption p {
-    font-size: 0.9em;
-    opacity: 0.8;
-  }
-  figure.snip0056 figcaption .icons {
-    width: 100%;
-    text-align: left;
-  }
-  figure.snip0056 figcaption .icons i {
-    font-size: 26px;
-    padding: 5px;
-    top: 50%;
-    color: #000000;
-  }
-  figure.snip0056 figcaption a {
-    opacity: 0.3;
-    -webkit-transition: opacity 0.35s;
-    transition: opacity 0.35s;
-  }
-  figure.snip0056 figcaption a:hover {
-    opacity: 0.8;
-  }
-  figure.snip0056 .position {
-    width: 100%;
-    text-align: left;
-    padding: 15px 30px;
-    font-size: 0.9em;
-    opacity: 1;
-    font-style: italic;
-    color: #ffffff;
-    background: #000000;
-    clear: both;
-  }
-  figure.snip0056.blue .position {
-    background: #20638f;
-  }
-  figure.snip0056.red .position {
-    background: #962d22;
-  }
-  figure.snip0056.yellow .position {
-    background: #bf6516;
-  }
-  figure.snip0056:hover > img,
-  figure.snip0056.hover > img {
-    right: -12%;
-  }
-  
-  #resultados-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+#trivia_amount {
+  border-radius: 8px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  border: solid;
+  height: 3em;
+  width: 21em;
+  margin: 10px;
+}
+
+#trivia_category {
+  border-radius: 8px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  border: solid;
+  font-size: 20px;
+  height: 3em;
+  width: 21em;
+  margin: 10px;
+}
+
+#trivia_difficulty {
+  border-radius: 8px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  border: solid;
+  font-size: 20px;
+  height: 3em;
+  width: 21em;
+  margin: 10px;
+}
+
+#question-container {
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  width: 65%;
+  border-radius: 10px;
+  box-shadow: 13px 12px 32px 3px rgba(0, 0, 0, 0.75);
+  border: solid;
+  padding: 20px 20px;
+
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+#type {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: underline 2px gray;
+  font-style: italic;
+
+}
+
+#question {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  justify-content: center;
+  padding: 8px 10px;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
+.nota {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+  font-size: 30px;
+}
+
+.botones {
+  margin: 100px;
+}
+
+.tus_notas {
+  border: 2px solid red;
+}
+
+
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, .5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+
+}
+
+.login-box a:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+    0 0 25px #03e9f4,
+    0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
   }
 
-  
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,800);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+figure.snip0056 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 380px;
+  max-width: 480px;
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+}
+
+.p-card {
+  font-size: 15px;
+}
+
+figure.snip0056 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+figure.snip0056>img {
+  width: 50%;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  -webkit-transform: scale(1.6);
+  transform: scale(1.6);
+  position: relative;
+  float: right;
+  right: -15%;
+  z-index: 1;
+}
+
+figure.snip0056 figcaption {
+  padding: 20px 30px 20px 20px;
+  position: absolute;
+  left: 0;
+  width: 50%;
+}
+
+figure.snip0056 figcaption h2,
+figure.snip0056 figcaption p {
+  margin: 0;
+  text-align: left;
+  padding: 10px 0;
+  width: 100%;
+}
+
+figure.snip0056 figcaption h2 {
+  font-size: 1.3em;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+figure.snip0056 figcaption h2 span {
+  font-weight: 800;
+}
+
+figure.snip0056 figcaption p {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+figure.snip0056 figcaption .icons {
+  width: 100%;
+  text-align: left;
+}
+
+figure.snip0056 figcaption .icons i {
+  font-size: 26px;
+  padding: 5px;
+  top: 50%;
+  color: #000000;
+}
+
+figure.snip0056 figcaption a {
+  opacity: 0.3;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+
+figure.snip0056 figcaption a:hover {
+  opacity: 0.8;
+}
+
+figure.snip0056 .position {
+  width: 100%;
+  text-align: left;
+  padding: 15px 30px;
+  font-size: 0.9em;
+  opacity: 1;
+  font-style: italic;
+  color: #ffffff;
+  background: #000000;
+  clear: both;
+}
+
+figure.snip0056.blue .position {
+  background: #20638f;
+}
+
+figure.snip0056.red .position {
+  background: #962d22;
+}
+
+figure.snip0056.yellow .position {
+  background: #bf6516;
+}
+
+figure.snip0056:hover>img,
+figure.snip0056.hover>img {
+  right: -12%;
+}
+
+#resultados-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
