@@ -81,7 +81,7 @@ function startGame() {
 
   currentQuestionIndex = 0;
   questionContainerElement.classList.remove("hide");
-  nameData.classList.add("hide");
+  // nameData.classList.add("hide");
 }
 
 
@@ -189,7 +189,7 @@ function clickReset() {
   startButton.classList.remove("hide")
   restartButton.classList.add("hide")
   triviaOptions.classList.remove("hide");
-  nameData.classList.remove("hide");
+  // nameData.classList.remove("hide");
   scoreButonn.classList.add("hide")
   resetPlaceholder()
 }
@@ -274,4 +274,29 @@ const paintResults = () => {
   </figure>
         `
     });
+}
+
+
+let slideIndex = 1;
+showSlides(slideIndex)
+
+
+function plusSlides(n){
+    showSlides(slideIndex += n)
+}
+function currentSlide(n){
+    showSlides(slideIndex = n)
+}
+function showSlides(n){
+    let i;
+    let slides = document.querySelectorAll(".mySlides");
+  
+    if(n > slides.length) slideIndex = 1
+    if(n < 1) slideIndex = slides.length
+    for(i = 0; i < slides.length; i++){
+        slides[i].style.display = "none"
+    }
+    
+    slides[slideIndex-1].style.display = "block";
+    
 }
