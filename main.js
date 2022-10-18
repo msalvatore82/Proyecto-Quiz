@@ -239,7 +239,7 @@ const resultsContainer = document.getElementById("resultados-box")
 
 const resultadosUp = JSON.parse(localStorage.getItem("results")) || [];
 
-let countImage = 1
+// let countImage = 1
 
 let slideIndex = 1;
 showSlides(slideIndex)
