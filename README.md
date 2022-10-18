@@ -9,7 +9,10 @@ En esta página, tenemos 2 inputs y un slides de imágenes. En los inputs tomamo
 ![foto](assets/images/homepage.png)
 
 # 3. Configuracion del Quiz 
-Configuracion del Quiz Tiene diversas opciones: A- Se pueden elegir la cantidad de preguntas con un rango de 1-50. B- También permite elegir la categoría de las mismas. C- Por último podemos elegir la dificultad.
+Configuracion del Quiz Tiene diversas opciones: 
+A- Se pueden elegir la cantidad de preguntas con un rango de 1-50. 
+B- También permite elegir la categoría de las mismas. 
+C- Por último podemos elegir la dificultad.
 ![foto](assets/images/quizmaker.png)
 
 # 4. Quiz 🧮
@@ -18,7 +21,13 @@ En esta sección se desarrolla el Quiz, al hacer clic en start en la página de 
 ![foto](assets/images/quiz.png)
 
 # 5. Scores / Cards 📇
-Cuando damos clic en el botón Start Game, se envian los datos del login al LocalStorage, el cual al finalizar el juego nos proveerá la información para imprimir las diferentes Cards de los jugadores con información como: -Nombre -Apodo -Puntuación -Porcentaje de aciertos -Nivel de dificultad -Categoría -Imagen del avatar seleccionado
+Cuando damos clic en el botón Start Game, se envian los datos del login al LocalStorage, el cual al finalizar el juego nos proveerá la información para imprimir las diferentes Cards de los jugadores con información como: -Nombre 
+-Apodo 
+-Puntuación 
+-Porcentaje de aciertos 
+-Nivel de dificultad 
+-Categoría 
+-Imagen del avatar seleccionado
 
 ![foto](assets/images/results.png)
 
