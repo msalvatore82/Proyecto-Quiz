@@ -23,6 +23,11 @@
   src: url(assets/fonts/Creepy\ Midnight.ttf);
 }
 
+@font-face {
+  font-family: "Honey";
+  src: url(assets/fonts/Honey\ Mints.ttf);
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap');
 
 html,
@@ -69,10 +74,10 @@ nav {
   width: 0%;
   height: 3px;
   margin: auto 10%;
-  background: #ea6615;
+  background: #72FFFF;
   transition: width 0.8s;
   border-radius: 10px;
-  box-shadow: 0px 0px 6px #ff0000;  
+  box-shadow: 0px 0px 6px #00D7FF;  
   
 }
 
@@ -96,7 +101,10 @@ h1 {
 body {
   background-color: #0093E9;
   background-image: linear-gradient(160deg, #0093E9 0%, #1d6567 100%);
-  height: 100vh;
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
 }
 
 #contendor-encuesta {
@@ -112,8 +120,10 @@ h2{
 }
 
 h3{
-  font-size: 40px;
+  font-size: 70px;
   text-align: center;
+  font-family: "Honey";
+  margin: 0;
 }
 
 #opciones-encuesta {
@@ -173,8 +183,8 @@ h3{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px 4em;
-  gap:1em;
+  padding: 2em 3em;
+  gap:2em;
 }
 
 #type {
@@ -504,12 +514,14 @@ figure.snip0056.hover > img {
 
 #resultados-box {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  align-content: flex-start;
+  flex-direction: row;
 }
 
 #resultados {
   
 }
+
