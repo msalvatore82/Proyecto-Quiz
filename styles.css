@@ -28,6 +28,11 @@
   src: url(assets/fonts/Honey\ Mints.ttf);
 }
 
+@font-face {
+  font-family: "Mountain";
+  src: url(assets/fonts/OUTER-FRONTIER.ttf);
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap');
 
 html,
@@ -56,7 +61,7 @@ nav {
 }
 
 .span-style{
-  font-size: 27px;
+  font-size: 35px;
   font-family: "Deliver";
   text-shadow: 2px 2px 6px rgba(251, 246, 246, 0.72);
   position: relative;
@@ -74,10 +79,10 @@ nav {
   width: 0%;
   height: 3px;
   margin: auto 10%;
-  background: #72FFFF;
+  background: #00D7FF;
   transition: width 0.8s;
   border-radius: 10px;
-  box-shadow: 0px 0px 6px #00D7FF;  
+  box-shadow: 0px 0px 6px #72FFFF;  
   
 }
 
@@ -124,6 +129,7 @@ h3{
   text-align: center;
   font-family: "Honey";
   margin: 0;
+  text-shadow: 3px -1px 7px rgba(19,96,123,0.89);
 }
 
 #opciones-encuesta {
@@ -248,8 +254,12 @@ h3{
 .login-box h2 {
   margin: 0 0 30px;
   padding: 0;
-  color: #fff;
+  color: #92dbe5;
   text-align: center;
+  font-family: "Painter";
+  font-size: 4em;
+  letter-spacing: 0.2em;
+  /* -webkit-text-stroke: 1px rgb(9, 109, 146); */
 }
 
 .login-box .user-box {
@@ -414,10 +424,12 @@ figure.snip0056 {
   background: #ffffff;
   color: #000000;
   border-radius: 8px;
+  border: solid;
+  box-shadow: 7px -6px 18px 3px rgba(0,0,0,0.75);
 }
 
-.p-card{
-  font-size: 15px;
+p.p-card{
+  font-size: 19px;
 }
 
 figure.snip0056 * {
@@ -440,7 +452,7 @@ figure.snip0056 > img {
   border: 30px double rgb(53, 53, 53)
 }
 figure.snip0056 figcaption {
-  padding: 20px 30px 20px 20px;
+  padding: 10px 10px;
   position: absolute;
   left: 0;
   width: 50%;
@@ -449,7 +461,7 @@ figure.snip0056 figcaption {
 figure.snip0056 figcaption h2,
 figure.snip0056 figcaption p {
   margin: 0;
-  text-align: left;
+  text-align: center;
   padding: 10px 0;
   width: 100%;
 }
@@ -463,7 +475,7 @@ figure.snip0056 figcaption h2 span {
   font-weight: 800;
 }
 figure.snip0056 figcaption p {
-  font-size: 0.9em;
+  font-size: 1.3em;
   opacity: 0.8;
 }
 figure.snip0056 figcaption .icons {
@@ -488,7 +500,7 @@ figure.snip0056 .position {
   width: 100%;
   text-align: left;
   padding: 15px 30px;
-  font-size: 0.9em;
+  font-size: 1.1em;
   opacity: 1;
   font-style: italic;
   color: #ffffff;
@@ -520,8 +532,3 @@ figure.snip0056.hover > img {
   align-content: flex-start;
   flex-direction: row;
 }
-
-#resultados {
-  
-}
-

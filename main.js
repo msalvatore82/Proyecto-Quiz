@@ -280,12 +280,11 @@ const paintResults = async () => {
     <figure class="snip0056">
     <figcaption>
       <h2>${results.nameInput}<br><span>"${results.apodoInput}"</span></h2>
-      <p class="p-card">Score ${results.puntuacion} of ${results.amountValue}.</p>
-      <p class= "p-card">${results.porCiento} % of succes</p>
-      <p class= "p-card">Difficulty: ${results.str}</p>
-      <p> Category: ${category[0]?.name}</p>
+      <p class="p-card">Score <b>${results.puntuacion}</b> of <b>${results.amountValue}</b>.</p>
+      <p class= "p-card"><b>${results.porCiento} %</b> of succes</p>
+      <p class= "p-card">Difficulty: <b>${results.str}</b></p>
     </figcaption><img src="./assets/super/${results.slideIndex}.png" alt="sample8" />
-    <div class="position"></div>
+    <div class="position"><p> Category: ${category[0]?.name}</p></div>
   </figure>
         `
   });
@@ -311,3 +310,4 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
 
 }
+
