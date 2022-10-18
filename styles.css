@@ -91,9 +91,6 @@ h1 {
   margin: 25px 0px;
   font-family: 'Roboto', sans-serif;
   font-size: 40px;
-  
-
-
 }
 
 body {
@@ -114,22 +111,14 @@ h2{
   font-size: 36px;
 }
 
+h3{
+  font-size: 40px;
+  text-align: center;
+}
+
 #opciones-encuesta {
   display: flex;
   gap: 1em;
-}
-
-/* label{
-  font-size:25px;
-  font-weight:700;
-  font-family: 'Roboto', sans-serif;
-  margin: 30px;
-  margin-bottom: 10px;
-} */
-
-.trivias-options {
-  margin: 30px;
-  padding: 20px;
 }
 
 #trivia_amount {
@@ -184,7 +173,8 @@ h2{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 40px;
+  padding: 0px 4em;
+  gap:1em;
 }
 
 #type {
@@ -518,4 +508,8 @@ figure.snip0056.hover > img {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+#resultados {
+  width: 80vw;
 }

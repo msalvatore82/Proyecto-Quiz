@@ -13,6 +13,7 @@ function goAbout() {
   encuesta.classList.remove("hide");
   resultados.classList.add("hide");
   clickReset()
+  scoreButonn.classList.add("hide")
 }
 
 function goHome() {
@@ -20,6 +21,7 @@ function goHome() {
   encuesta.classList.add("hide");
   home.classList.remove("hide");
   resultados.classList.add("hide");
+  scoreButonn.classList.add("hide")
 }
 
 function hideView() {
