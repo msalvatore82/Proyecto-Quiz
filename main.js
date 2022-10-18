@@ -83,7 +83,6 @@ function startGame() {
 
   currentQuestionIndex = 0;
   questionContainerElement.classList.remove("hide");
-  console.log(err)
 }
 
 
@@ -239,9 +238,6 @@ let countImage = 1
 let slideIndex = 1;
 showSlides(slideIndex)
 
-
-
-
 const sendData = () => {
 
   const nameInput = document.getElementById("nombre").value
@@ -271,30 +267,23 @@ const sendData = () => {
 
   resultadosUp.push(obj);
   localStorage.setItem("results", JSON.stringify(resultadosUp));
-
-  function resetCountimage() {
-    if (countImage != 1) {
-      countImage = 0;
-    }
-  }
-  resetCountimage()
 };
 
 const paintResults = async () => {
   const resultadosDown = JSON.parse(localStorage.getItem("results"))
   resultsContainer.innerHTML = ""
-  // const res = await axios.get("https://opentdb.com/api_category.php")
-  // const categories = res.data.trivia_categories
+  const res = await axios.get("https://opentdb.com/api_category.php")
+  const categories = res.data.trivia_categories
   resultadosDown.forEach(results => {
-    // const category = categories.filter(category => category.id == +results.triviaCategory)
-
+    const category = categories.filter(category => category.id == +results.triviaCategory)
     resultsContainer.innerHTML += `
     <figure class="snip0056">
     <figcaption>
       <h2>${results.nameInput}<br><span>"${results.apodoInput}"</span></h2>
-      <p class="p-card">Puntuación de ${nota} sobre ${results.amountValue}.</p>
-      <p class= "p-card">${results.porCiento} % de acierto</p>
-      <p class= "p-card">${results.str}</p>
+      <p class="p-card">Score ${results.puntuacion} of ${results.amountValue}.</p>
+      <p class= "p-card">${results.porCiento} % of succes</p>
+      <p class= "p-card">Difficulty: ${results.str}</p>
+      <p> Category: ${category[0]?.name}</p>
     </figcaption><img src="./assets/super/${results.slideIndex}.png" alt="sample8" />
     <div class="position"></div>
   </figure>
