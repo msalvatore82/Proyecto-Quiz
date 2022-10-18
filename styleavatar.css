@@ -90,13 +90,14 @@ transform:  rotate(-20deg);
 
 .glitch:before {
    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-   color: #00ffff;
+   color: #060d0d;
    z-index: -1;
 }
 
 .glitch:after {
    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
-   color: #ff00ff;
+   color: #157fad;
+   text-shadow: 2px 0 0px #800040, 3px 2px 0px rgba(77,0,38,0.5), 3px 0 3px #FF002B, 5px 0 3px #800015, 6px 2px 3px rgba(77,0,13,0.5), 6px 0 9px #FF5500, 8px 0 9px #802A00, 9px 2px 9px rgba(77,25,0,0.5), 9px 0 18px #00a2ff, 11px 0 18px #001180, 12px 2px 18px rgba(77,66,0,0.5), 12px 0 30px #0015ff, 14px 0 30px #006280, 15px 2px 30px rgba(0, 24, 77, 0.5), 15px 0 45px #00eaff, 17px 0 45px #007180, 17px 2px 45px rgba(0, 44, 77, 0.5), 2px 2px 2px rgba(0,40,206,0);
    z-index: -2;
 }
 

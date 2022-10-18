@@ -279,7 +279,7 @@ const paintResults = async () => {
     resultsContainer.innerHTML += `
     <figure class="snip0056">
     <figcaption>
-      <h2>${results.nameInput}<br><span>"${results.apodoInput}"</span></h2>
+      <h2>${results.nameInput}<br><span class="figspan">"${results.apodoInput}"</span></h2>
       <p class="p-card">Score <b>${results.puntuacion}</b> of <b>${results.amountValue}</b>.</p>
       <p class= "p-card"><b>${results.porCiento} %</b> of succes</p>
       <p class= "p-card">Difficulty: <b>${results.str}</b></p>
