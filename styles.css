@@ -60,6 +60,7 @@ nav {
   display: flex;
   /* flex-direction: column; */
   gap: 2vw;
+  align-items: center;
 }
 
 .span-style{

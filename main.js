@@ -6,6 +6,7 @@ const homeNav = document.getElementById("homeNav");
 const encuestaNav = document.getElementById("encuestaNav");
 const resultados = document.getElementById("resultados");
 const resultadosNav = document.getElementById("resultadosNav");
+const musica = document.getElementById("musica");
 
 function goAbout() {
 
@@ -71,6 +72,7 @@ let nota = 0;
 let questions = [];
 
 function startGame() {
+ 
   axios
     .get(`https://opentdb.com/api.php?amount=${i.value}&category=${e.value}&difficulty=${u.value}`)
     .then((res) => {
@@ -80,9 +82,12 @@ function startGame() {
     .catch((err) => console.error(err));
   startButton.classList.add("hide");
   triviaOptions.classList.add("hide");
+  
+  
 
   currentQuestionIndex = 0;
   questionContainerElement.classList.remove("hide");
+  
 }
 
 
@@ -170,6 +175,7 @@ function selectAnswer() {
   } else {
     restartButton.classList.remove("hide");
     scoreButonn.classList.remove("hide");
+    
     sendData()
     paintResults()
     resetScore()
@@ -308,5 +314,5 @@ function showSlides(n) {
   }
 
   slides[slideIndex - 1].style.display = "block";
-
+  musica.classList.remove("hide");
 }
