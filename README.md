@@ -33,4 +33,4 @@ Cuando damos clic en el botón StartGame, se envian los datos del login al Local
 ![foto](assets/images/results.png)
 
 
-😊Hecho por [Matias Salvatore](https://github.com/msalvatore82) y [Sergio Juan Vidal](https://github.com/SergioJ-Vidal)😊
+😊Hecho por [Matias Salvatore](https://github.com/msalvatore82)
